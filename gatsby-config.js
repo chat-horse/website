@@ -1,29 +1,31 @@
-const guid = process.env.NETLIFY_GOOGLE_ANALYTICS_ID;
-
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Serif',
-    description: 'my theme',
+    title: 'chat.horse',
+    description: 'chat for ponies',
     contact: {
-      phone: 'XXX XXX XXX',
-      email: 'zerostaticthemes@gmail.com',
+      phone: 'xxx',
+      email: 'contact@chat.horse',
     },
     menuLinks: [
       {
-        name: 'Services',
-        link: '/services',
+        name: 'About',
+        link: '/about',
       },
       {
-        name: 'Team',
-        link: '/team',
+        name: 'FAQ',
+        link: '/faq',
       },
       {
-        name: 'Testimonials',
-        link: '/testimonials',
+        name: 'Bridges',
+        link: '/bridges',
       },
       {
         name: 'Contact',
         link: '/contact',
+      },
+      {
+        name: 'Login',
+        link: 'https://client.chat.horse',
       },
     ],
   },
@@ -51,14 +53,6 @@ module.exports = {
       options: {
         path: `${__dirname}/src/images`,
         name: 'images',
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: guid ? guid : 'UA-XXX-1',
-        // Puts tracking script in the head instead of the body
-        head: false,
       },
     },
   ],

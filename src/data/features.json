@@ -1,17 +1,17 @@
 [
   {
-    "title": "Free Consultation",
-    "description": "New clients recieve an obligation free consultation.",
-    "image": "/features/noun_branding_1885335.svg"
+    "title": "Talk To Anyone",
+    "description": "Talk to your friends on chat.horse as well as Discord and Telegram",
+    "image": "/features/message-square.svg"
   },
   {
-    "title": "Certified Accountants",
-    "description": "All members of our team are certified accountants.",
-    "image": "/features/noun_The Process_1885341.svg"
+    "title": "Encrypted Private Chats",
+    "description": "Private conversations between chat.horse participants are not readable by us",
+    "image": "/features/lock.svg"
   },
   {
-    "title": "Tax Compliance",
-    "description": "We stay up to date on the latest changes to the tax code.",
-    "image": "/features/noun_3d modeling_1885342.svg"
+    "title": "Free Forever",
+    "description": "Never pay for special features. All code is free and open source",
+    "image": "/features/dollar-sign.svg"
   }
 ]

@@ -1,5 +1,8 @@
+// Custom mixins
+@import '_mixins';
+
 // Font
-@import url('https://fonts.googleapis.com/css?family=Lora:400|Open+Sans:400,700');
+@include font-face('American Typewriter', '../../static/fonts/American Typewriter Regular', normal, 400, ttf);
 
 // Bootstrap
 @import 'bootstrap/functions';
@@ -59,17 +62,17 @@
 @import 'components/strip';
 @import 'components/whitebox';
 @import 'components/feature';
-@import 'components/call';
+@import 'components/start-chatting';
 @import 'components/card';
 @import 'components/card-two';
+@import 'components/faq';
 
 // Pages
+@import 'pages/about/page-about';
 @import 'pages/home';
-@import 'pages/team/page-teams';
-@import 'pages/testimonials/page-testimonials';
-@import 'pages/testimonials/testimonial';
-@import 'pages/services/page-services';
-@import 'pages/services/page-service';
+@import 'pages/faq/page-faq';
+@import 'pages/bridges/page-bridges';
+@import 'pages/contact/page-contact';
 
 // Display breakpoints for DEV
 // body:after {

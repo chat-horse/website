@@ -1,77 +1,36 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import SEO from '../../components/SEO';
 import Layout from '../../layouts/index';
-import Call from '../../components/Call';
 
-const Contact = props => (
-  <Layout bodyClass="page-contact">
-    <SEO title="Contact" />
-    <div className="intro intro-small">
-      <div className="container">
-        <div className="row">
-          <div className="col-12">
-            <h1>Contact</h1>
-          </div>
-        </div>
+const Contact = (props) => {
+  const pageHTML = props.data.allMarkdownRemark.edges[0].node.html;
+  return (
+    <Layout bodyClass="page-home">
+      <SEO title="Contact" />
+      <div className="container side-padding col-lg-8 col-md-12 col-sm-12">
+        <h1 className="title">Contact</h1>
+        <p className="text"
+          dangerouslySetInnerHTML={{ __html: pageHTML }}
+        >
+        </p>
       </div>
-    </div>
-    <div className="container">
-      <div className="row">
-        <div className="col-12">
-          <Call button={false} />
-        </div>
-        <div className="col-8">
-          <h4 className="mt-4">Business Hours</h4>
-          <table className="table table-sm opening-hours-table">
-            <tbody>
-              <tr>
-                <td className="day font-weight-bold">Monday</td>
-                <td className="opens">8:30am</td>
-                <td>-</td>
-                <td className="closes">5:00pm</td>
-              </tr>
-              <tr>
-                <td className="day font-weight-bold">Tuesday</td>
-                <td className="opens">8:30am</td>
-                <td>-</td>
-                <td className="closes">5:00pm</td>
-              </tr>
-              <tr>
-                <td className="day font-weight-bold">Wednesday</td>
-                <td className="opens">8:30am</td>
-                <td>-</td>
-                <td className="closes">5:00pm</td>
-              </tr>
-              <tr>
-                <td className="day font-weight-bold">Thursday</td>
-                <td className="opens">8:30am</td>
-                <td>-</td>
-                <td className="closes">5:00pm</td>
-              </tr>
-              <tr>
-                <td className="day font-weight-bold">Friday</td>
-                <td className="opens">8:30am</td>
-                <td>-</td>
-                <td className="closes">5:00pm</td>
-              </tr>
-              <tr>
-                <td className="day font-weight-bold">Saturday</td>
-                <td className="opens">Closed</td>
-                <td />
-                <td className="closes" />
-              </tr>
-              <tr>
-                <td className="day font-weight-bold">Sunday</td>
-                <td className="opens">Closed</td>
-                <td />
-                <td className="closes" />
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </Layout>
-);
+    </Layout>
+  );
+};
+
+export const query = graphql`
+query {
+  allMarkdownRemark(
+    filter: { fileAbsolutePath: { regex: "/contact/" } }
+  ) {
+    edges {
+      node {
+        html
+      }
+    }
+  }
+}
+`;
 
 export default Contact;

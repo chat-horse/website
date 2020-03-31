@@ -18,8 +18,26 @@ $grid-gutter-width: 20px;
 
 $white: #ffffff;
 $black: #000000;
-$primary: #1c3ed3;
-$secondary: #414156;
+
+$text-color: #ffffff;
+
+$primary: $white;
+$secondary: #838383;
+
+$chat-horse-primary: #ffffff;
+$chat-horse-secondary: #ffea00;
+
+$page-background: #2f3136;
+$header-background: #23272a;
+$start-chatting-background: #36393f;
+
+$section-title: #c8c8c8;
+
+// FAQ Page
+$faq-title-text-color: $white;
+$faq-row-content-color: $white;
+$faq-row-title-color: $chat-horse-secondary;
+$faq-item-bg: lighten($page-background, 15%);
 
 // Links
 $link-color: $primary;
@@ -30,7 +48,7 @@ $link-hover-decoration: underline;
 // Fonts
 $font-family-base: 'Open Sans', 'Helvetica Neue', Arial, sans-serif,
   -apple-system;
-$font-family-heading: 'Lora', 'Helvetica Neue', Arial, sans-serif, -apple-system;
+$font-family-heading: 'American Typewriter', 'Helvetica Neue', Arial, sans-serif, -apple-system;
 $font-size-base: 1rem; // Assumes the browser default, typically `16px`
 $font-weight-thin: 200;
 $font-weight-light: 300;

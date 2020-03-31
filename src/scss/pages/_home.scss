@@ -1,18 +1,38 @@
-.page-home {
-  background-image: url('../images/undraw_taking_notes_tjaf.svg');
+.main-page {
+  background-image: url('../images/chat_horse.png');
   background-repeat: no-repeat;
-  background-size: 115%;
-  background-position: 49px -40px;
+  background-size: 65%;
+  background-position: 100% 150px;
+}
+
+.page-home {
+  background-color: $page-background;
   @include media-breakpoint-up(sm) {
-    background-size: 90%;
-    background-position: 159px -40px;
+    background-size: 60%;
+    background-position: 100% 50px;
   }
   @include media-breakpoint-up(md) {
-    background-size: 70%;
-    background-position: 100% -50px;
+    background-size: 50%;
+    background-position: 100% 20px;
   }
   @include media-breakpoint-up(lg) {
-    background-size: 60%;
-    background-position: 100% -70px;
+    background-size: 30%;
+    background-position: 85% 5px;
   }
+}
+
+.section-title {
+  color: $section-title;
+}
+
+.punctuation {
+  color: $chat-horse-secondary;
+}
+
+/* Fix <code> tags */
+code {
+  background-color: darken($page-background, 10%);
+  border:black 1px;
+  padding:6px;
+  border-radius: 5px;
 }

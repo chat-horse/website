@@ -6,7 +6,12 @@ const Menu = (props) => {
   return (
     <div id="main-menu" className="main-menu">
       <ul>
-        {menuLinks.map(link => (
+        {/* Modification to allow for external menu links */}
+        {menuLinks.map(link => link.link.startsWith("https") ? (
+          <li key={link.name}>
+            <a href={link.link}>{link.name}</a>
+          </li>
+        ) : (
           <li key={link.name}>
             <Link to={link.link}>{link.name}</Link>
           </li>

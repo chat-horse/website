@@ -3,65 +3,43 @@ import { graphql, withPrefix, Link } from 'gatsby';
 import Helmet from 'react-helmet';
 import SEO from '../components/SEO';
 import Layout from '../layouts/index';
-import Call from '../components/Call';
+import StartChatting from '../components/StartChatting';
 
 const Home = (props) => {
-  const markdown = props.data.allMarkdownRemark.edges;
-  const json = props.data.allFeaturesJson.edges;
+  const featureJson = props.data.allFeaturesJson.edges;
+  const blurbJson = props.data.allBlurbsJson.edges;
+  const blurb = blurbJson[Math.floor(Math.random()*blurbJson.length)];
   return (
-    <Layout bodyClass="page-home">
-      <SEO title="Home" />
+    <Layout bodyClass="page-home main-page">
+      <SEO title="chat.horse" />
       <Helmet>
         <meta
           name="description"
-          content="Small Business Theme. Multiple content types using Markdown and JSON sources. Responsive design and SCSS. This is a beautiful and artfully designed starting theme."
+          content="chat.horse - a chat network for ponies, by ponies"
         />
       </Helmet>
-      <div className="intro pb-4">
-        <div className="container">
-          <h1>Serif - Gatsby Small Business Theme.</h1>
-          <p>
-            Multiple content types using Markdown and JSON sources. Responsive design and SCSS. This
-            is a beautiful and artfully designed starting theme.
-          </p>
-        </div>
-      </div>
-
-      <div className="container pt-2">
-        <Call button />
-      </div>
-
-      <div className="container pt-8 pt-md-10">
-        <div className="row justify-content-start">
-          <div className="col-12">
-            <h2 className="title-3 text-dark mb-3">Our Services</h2>
-          </div>
-          {markdown.map(edge => (
-            <div key={edge.node.frontmatter.path} className="col-12 col-md-4 mb-1">
-              <div className="card service service-teaser">
-                <div className="card-content">
-                  <h2>
-                    <Link to={edge.node.frontmatter.path}>{edge.node.frontmatter.title}</Link>
-                  </h2>
-                  <p>{edge.node.excerpt}</p>
-                </div>
-              </div>
+      <div className="container mt-2">
+        <div className="row justify-content-center">
+          <div className="intro col-12 col-lg-6">
+            <div className="container">
+              <h1>chat<span className="punctuation">.</span>horse</h1>
+              <p><i>{blurb.node.text}</i></p>
+              <p>Free chat for ponies.<br />Ready to get started?</p>
             </div>
-          ))}
-          <div className="col-12 text-center">
-            <Link className="button button-primary mt-2" to="/services">
-              View All Services
-            </Link>
+          </div>
+
+          <div className="intro col-12 col-lg-6">
+            <StartChatting button />
           </div>
         </div>
       </div>
 
-      <div className="container pt-5 pb-5 pt-md-7 pb-md-7">
+      <div className="container pt-5 pb-5 pt-md-4 pb-md-4">
         <div className="row justify-content-center">
           <div className="col-12">
-            <h2 className="title-3 text-dark mb-4">Our Features</h2>
+            <h2 className="title-3 section-title mb-4">Features</h2>
           </div>
-          {json.map(edge => (
+          {featureJson.map(edge => (
             <div key={edge.node.id} className="col-12 col-md-6 col-lg-4 mb-2">
               <div className="feature">
                 {edge.node.image && (
@@ -82,22 +60,6 @@ const Home = (props) => {
 
 export const query = graphql`
   query {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/services/" } }
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            path
-            title
-            date(formatString: "DD MMMM YYYY")
-          }
-          excerpt
-        }
-      }
-    }
     allFeaturesJson {
       edges {
         node {
@@ -105,6 +67,13 @@ export const query = graphql`
           title
           description
           image
+        }
+      }
+    }
+    allBlurbsJson {
+      edges {
+        node {
+          text
         }
       }
     }
