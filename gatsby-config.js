@@ -25,7 +25,7 @@ module.exports = {
       },
       {
         name: 'Login',
-        link: 'https://client.chat.horse',
+        link: 'https://app.chat.horse',
       },
     ],
   },
