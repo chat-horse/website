@@ -1,0 +1,50 @@
+[
+    {
+        "title": "Bridges",
+        "rows": [
+            {
+                "title": "How do I talk to people on Discord?",
+                "content": "You can talk to users on Discord by linking your existing Discord account with the chat.horse Discord bridge. Visit <a href=\"https://chat.horse/bridging/discord\">this page</a> for instructions. <br/>Or <a href=\"https://chat.horse/bridges\">this page</a> for a general introduction to bridges."
+            },
+            {
+                "title": "How do I talk to people on Telegram?",
+                "content": "You can talk to users on Telegram by linking your existing Telegram account with the chat.horse Telegram bridge.<br/>Visit this page for instructions: <a href=\"https://chat.horse/bridging/discord\">https://chat.horse/bridging/discord</a><br/>Or this page for a general introduction to bridges: <a href=\"https://chat.horse/bridges\">https://chat.horse/bridges</a>"
+            }
+        ]
+    },
+    {
+        "title": "Clients",
+        "rows": [
+            {
+                "title": "Is there a Desktop app?",
+                "content": "Visit <a href=\"https://chat.horse/desktop\">https://chat.horse/desktop</a> for a Desktop version of the web app. It runs on Linux, Mac and Windows."
+            },
+            {
+                "title": "Is there a Mobile app?",
+                "content": "Visit <a href=\"https://chat.horse/mobile\">https://chat.horse/mobile</a> for mobile apps. Both Android and iOS supported."
+            },
+            {
+                "title": "What if I don't like the chat.horse clients?",
+                "content": "chat.horse runs on top of <a href=\"https://matrix.org\">Matrix</a>, so technically any Matrix client can be used. See <a href=\"https://matrix.org/clients/\">here</a> for more options, or build your own!"
+            }
+        ]
+    },
+    {
+        "title": "Features",
+        "rows": [
+            {
+                "title": "How do I add my own emotes?",
+                "content": "To add your own emote images, simply open up Settings and navigate to the Emotes tab.<br /><br /><img src=\"/faq/images/settings.png\" /><br /><br />Click on your username and then select Settings.<br /><br /><img src=\"/faq/images/emotes-tab.png\" /><br /><br />Click on the Emotes tab.<br /><br /><img src=\"/faq/images/add-emote.png\" /><br /><br />Click Add Emote, then set the Emote Name (ex. :happy:), then click Select Image.<br /><br />When you've uploaded an image, and the Emote MXC URL field is filled with a URL, you're done! Close Settings and try to use your emote in the chat field."
+            }
+        ]
+    },
+    {
+        "title": "Techology",
+        "rows": [
+            {
+                "title": "What technology does chat.horse use?",
+                "content": "chat.horse is built on top of <a href=\"https://matrix.org\">Matrix</a>, an open standard for communication. This grants us access to talk to anyone else that's using the same network. Think of it like email. Even though you're a Gmail user, you can still talk to people on Hotmail.<br /><br />The actual web/desktop and mobile apps are customized versions of <a href=\"https://riot.im\">Riot</a>, with the desktop app being a fork of the version customized by <a href=\"https://ponies.im\">ponies.im</a>.<br /><br />The bridges for Discord and Telegram are instances of <a href=\"https://github.com/matrix-discord/mx-puppet-discord\">mx-puppet-discord</a> and <a href=\"https://github.com/tulir/mautrix-telegram\">mautrix-telegram</a> respectively.<br /><br />This website is built using <a href=\"https://gatsbyjs.org\">Gatsby</a>.<br /><br />Source code for everything is available at <a href=\"https://github.com/chat-horse\">https://github.com/chat-horse</a>."
+            }
+        ]
+    }
+]
