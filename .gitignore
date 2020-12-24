@@ -8,6 +8,9 @@ yarn-error.log*
 # Update script
 update-website.sh
 
+# Temp files
+*~
+
 # Runtime data
 pids
 *.pid
